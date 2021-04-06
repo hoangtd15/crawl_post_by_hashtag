@@ -12,6 +12,12 @@ var cors = require('cors')
 
 app.use(cors())
 
+app.use(express.static(__dirname)); //here is important thing - no static directory, because all static :)
+
+app.get("/*", function(req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
 app.post("/",jsonParser, async (req,res)=>{
     console.log(req.body)
     const {value} = req.body

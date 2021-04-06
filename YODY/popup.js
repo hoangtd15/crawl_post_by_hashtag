@@ -40,7 +40,7 @@ function getData(){
       await chrome.tabs.sendMessage(tabs[0].id, {getdata: "yody"},async function (response){
            var value = await response.values
           console.log(JSON.stringify({"value": value}))
-          const x = await fetch('http://localhost:1337/', {
+          const x = await fetch('http://103.110.85.140/:1337/', {
               method: 'POST',
               body: JSON.stringify({"value": value}), // string or object
               headers: {
