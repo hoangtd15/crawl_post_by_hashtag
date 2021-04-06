@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "YODY",
+    "version": "0.0.1",
+  
+    "action": {
+        "default_popup":"step1.html"       
+    },
+
+    "icons": { "16": "icon.png",
+      "48": "icon.png",
+     "128": "icon.png" },
+
+    "content_scripts": [
+        {
+          "matches": ["http://*/*", "https://*/*"],
+          "js": ["tab.js"]
+        }
+      ],
+      "permissions": [
+        "activeTab",
+        "tabs"
+      ]
+}
